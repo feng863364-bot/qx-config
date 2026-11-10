@@ -1,0 +1,1 @@
+{"description":"blackmatrix7 什么值得买签到脚本（归档版）：每日签到+抽奖1次+收藏文章7次，每天 10:05 执行。首次使用前需开着 QX 打开什么值得买 App、进入签到页面抓取 Cookie。","name":"什么值得买每日签到","task":["5 10 * * * https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/archive/smzdm/smzdm_daily.js, tag=什么值得买每日签到, enabled=true"]}
