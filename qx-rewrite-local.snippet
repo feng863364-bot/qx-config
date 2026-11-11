@@ -68,3 +68,10 @@
 
 ; ---- 什么值得买签到：抓 Cookie（2026-11-11 换修复版脚本：原 blackmatrix7 脚本存 Cookie 前置校验多、失败静默；修复版只抓 Cookie、成败都通知。需在配置 [mitm] 里有 user-api.smzdm.com） ----
 ^https?:\/\/user-api\.smzdm\.com\/checkin$ url script-request-header https://raw.githubusercontent.com/feng863364-bot/qx-config/main/smzdm_cookie_capture.js
+
+; ---- B站每日任务：抓 Cookie（ClydeTime/MartinsKing 版，2025-05 更新；需 [mitm] 有 app.bilibili.com、m.bilibili.com） ----
+^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\? url script-request-header https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/BiliBili.js
+^https?:\/\/m\.bilibili\.com\/$ url script-request-header https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/BiliBili.js
+
+; ---- 网易云音乐签到：抓 Cookie（chavyleung 版；需 [mitm] 有 music.163.com） ----
+^https:\/\/music\.163\.com\/weapi\/user\/level url script-request-body https://raw.githubusercontent.com/chavyleung/scripts/master/neteasemusic/quanx/neteasemusic.cookie.js
