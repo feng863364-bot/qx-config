@@ -69,12 +69,18 @@
 ; ---- 什么值得买签到：抓 Cookie（2026-11-11 换修复版脚本：原 blackmatrix7 脚本存 Cookie 前置校验多、失败静默；修复版只抓 Cookie、成败都通知。需在配置 [mitm] 里有 user-api.smzdm.com） ----
 ^https?:\/\/user-api\.smzdm\.com\/checkin$ url script-request-header https://raw.githubusercontent.com/feng863364-bot/qx-config/main/smzdm_cookie_capture.js
 
-; ---- B站每日任务：抓 Cookie（ClydeTime/MartinsKing 版，2025-05 更新；需 [mitm] 有 app.bilibili.com、m.bilibili.com） ----
-^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\? url script-request-header https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/BiliBili.js
-^https?:\/\/m\.bilibili\.com\/$ url script-request-header https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/BiliBili.js
+; ---- B站每日任务：抓 Cookie（2026-11-11 换自研修复版：原 ClydeTime 脚本跑起来才说话，
+; Safari 请求没进 QX 解密时全程静默；修复版只要触发、成功失败都弹通知，
+; 还会直说缺了 DedeUserID / SESSDATA / bili_jct 中的哪一项。存进 bilibili_daily_bonus，
+; 格式和原脚本一致，任务脚本不用动。需 [mitm] 有 app.bilibili.com、m.bilibili.com、www.bilibili.com、api.bilibili.com） ----
+^https?:\/\/app\.bilibili\.com\/x\/resource\/fingerprint\? url script-request-header https://raw.githubusercontent.com/feng863364-bot/qx-config/main/bilibili_cookie_capture.js
+^https?:\/\/m\.bilibili\.com\/$ url script-request-header https://raw.githubusercontent.com/feng863364-bot/qx-config/main/bilibili_cookie_capture.js
 
-; ---- 网易云音乐签到：抓 Cookie（chavyleung 版；需 [mitm] 有 music.163.com） ----
-^https:\/\/music\.163\.com\/weapi\/user\/level url script-request-body https://raw.githubusercontent.com/chavyleung/scripts/master/neteasemusic/quanx/neteasemusic.cookie.js
+; ---- 网易云音乐签到：抓会话（2026-11-11 换自研修复版：原 chavyleung 脚本跑起来才说话，
+; Safari 请求没进 QX 解密、或 Safari 里没登录时全程静默；修复版只要触发、成功失败都弹通知，
+; 还会校验 Cookie 里有没有 MUSIC_U，没登录就直说。只认 weapi/user/level 这一条，
+; 存进 chavy_cookie_neteasemusic，格式和原脚本一致，任务脚本不用动。需 [mitm] 有 music.163.com） ----
+^https:\/\/music\.163\.com\/weapi\/user\/level url script-request-body https://raw.githubusercontent.com/feng863364-bot/qx-config/main/netease_cookie_capture.js
 ; B站补充触发点（国际版App不发fingerprint、m站规则没命中时兜底）：www站任意页面 + 登录状态接口，登录后打开即抓
-^https?:\/\/www\.bilibili\.com\/ url script-request-header https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/BiliBili.js
-^https?:\/\/api\.bilibili\.com\/x\/web-interface\/nav url script-request-header https://raw.githubusercontent.com/ClydeTime/Quantumult/main/Script/Task/BiliBili.js
+^https?:\/\/www\.bilibili\.com\/ url script-request-header https://raw.githubusercontent.com/feng863364-bot/qx-config/main/bilibili_cookie_capture.js
+^https?:\/\/api\.bilibili\.com\/x\/web-interface\/nav url script-request-header https://raw.githubusercontent.com/feng863364-bot/qx-config/main/bilibili_cookie_capture.js
