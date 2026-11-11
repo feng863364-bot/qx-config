@@ -66,5 +66,5 @@
 ^http:\/\/analytics\.163\.com\/ntes url reject
 ^https?:\/\/client\.mail\.163.com\/apptrack\/confinfo\/(searchMultiAds.do|showAds.do) url reject
 
-; ---- 什么值得买签到：抓 Cookie（blackmatrix7 脚本，2026-11-11 加；需在配置 [mitm] 里有 user-api.smzdm.com） ----
-^https?:\/\/user-api\.smzdm\.com\/checkin$ url script-request-header https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/script/archive/smzdm/smzdm_daily.js
+; ---- 什么值得买签到：抓 Cookie（2026-11-11 换修复版脚本：原 blackmatrix7 脚本存 Cookie 前置校验多、失败静默；修复版只抓 Cookie、成败都通知。需在配置 [mitm] 里有 user-api.smzdm.com） ----
+^https?:\/\/user-api\.smzdm\.com\/checkin$ url script-request-header https://raw.githubusercontent.com/feng863364-bot/qx-config/main/smzdm_cookie_capture.js
