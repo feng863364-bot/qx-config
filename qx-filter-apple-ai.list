@@ -1,0 +1,9 @@
+; 苹果智能相关分流（2026-11-12）
+; 规则模式下苹果服务走国内 IP 会卡资格校验/资源下载，全代理美区才通；
+; 只加智能相关域名，不加全站 apple.com，免得影响 App Store、iCloud 国内服务。
+host-suffix, mesu.apple.com, AI美国
+host-suffix, gdmf.apple.com, AI美国
+host-suffix, xp.apple.com, AI美国
+host-suffix, guzzoni.apple.com, AI美国
+host-suffix, siri.apple.com, AI美国
+host-suffix, appldnld.apple.com, AI美国
