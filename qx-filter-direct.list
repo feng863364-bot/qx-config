@@ -1,1 +1,3 @@
-OyDnm7Tov57liIbmtYHvvIgyMDI2LTExLTEz77yJCjsgQ2xvdWRmbGFyZSDmjKHku6PnkIYv5py65oi/IElQIOeahOermei1sOebtOi/nu+8jOaMgiBRWCDmiZPkuI3lvIDnmoTmlL7ov5nph4zjgIIKaG9zdC1zdWZmaXgsIHl1bnd1c2hhbmdkaWFuLmNvbSwgRElSRUNUCg==
+; 直连分流（2026-11-13）
+; Cloudflare 挡代理/机房 IP 的站走直连，挂 QX 打不开的放这里。
+host-suffix, yunwushangdian.com, DIRECT
