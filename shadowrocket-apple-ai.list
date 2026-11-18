@@ -1,0 +1,8 @@
+# Apple Intelligence 分流（Shadowrocket，2026-11-18）
+# 苹果智能相关域名走代理；不加全站 apple.com，免得影响 App Store、iCloud 国内服务。
+DOMAIN-SUFFIX,mesu.apple.com,PROXY
+DOMAIN-SUFFIX,gdmf.apple.com,PROXY
+DOMAIN-SUFFIX,xp.apple.com,PROXY
+DOMAIN-SUFFIX,guzzoni.apple.com,PROXY
+DOMAIN-SUFFIX,siri.apple.com,PROXY
+DOMAIN-SUFFIX,appldnld.apple.com,PROXY
